@@ -4,7 +4,7 @@ from art import tprint
 from time import sleep
 
 # Tries to read if the user has set up the program before.
-# Otherwise, the user is directed to onboarding.
+# Otherwise, the user is directed to on-boarding.
 try:
     config = open("config.ini", "r")
 except OSError:
@@ -17,5 +17,5 @@ tprint("pyweather")
 print("==========================", end="\n\n")
 
 sleep(2)
-if not(configured):
+if not configured:
     welcome()
