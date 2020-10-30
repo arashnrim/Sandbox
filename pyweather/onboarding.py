@@ -61,7 +61,7 @@ def save_in_path():
     try:
         rc = open(profile, "a")
         root_dir = os.path.dirname(os.path.abspath(__file__))
-        rc.write("\"alias weather=python3 {}\"".format(root_dir))
+        rc.write("\nalias weather=\"python3 {}\"".format(root_dir))
         rc.close()
     except OSError:
         return False
