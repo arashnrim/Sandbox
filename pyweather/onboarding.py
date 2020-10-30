@@ -1,7 +1,7 @@
-from time import sleep
+import configparser
 import os
 from pathlib import Path
-import configparser
+from time import sleep
 
 """
 Welcomes the user to the project and guides them through on-boarding.

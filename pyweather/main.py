@@ -1,7 +1,6 @@
-import os
-from onboarding import *
 from art import tprint
-from time import sleep
+
+from onboarding import *
 
 # Tries to read if the user has set up the program before.
 # Otherwise, the user is directed to on-boarding.
