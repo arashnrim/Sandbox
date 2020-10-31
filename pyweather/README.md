@@ -49,3 +49,4 @@ Through this project, I was introduced to a lot of tools — both that helped wi
 - [Proper way to declare custom exceptions in modern Python?](https://stackoverflow.com/questions/1319615/proper-way-to-declare-custom-exceptions-in-modern-python)
 - [string capitalize() in Python](https://www.geeksforgeeks.org/string-capitalize-python/)
 - [How do I print bold text in Python?](https://stackoverflow.com/questions/8924173/how-do-i-print-bold-text-in-python)
+- [Ternary Operator in Python](https://www.geeksforgeeks.org/ternary-operator-in-python/)
