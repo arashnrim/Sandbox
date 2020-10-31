@@ -1,9 +1,13 @@
 import configparser
 import json
+import os
 import sys
 from urllib import request, error
 
+from styling import Color
+
 parser = configparser.ConfigParser()
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 class NoConfigError(Exception):
@@ -12,7 +16,7 @@ class NoConfigError(Exception):
 
 def retrieve_default_location():
     try:
-        data = parser.read("config.ini")
+        data = parser.read("{}/config.ini".format(ROOT_DIR))
         if not data:
             raise NoConfigError
     except NoConfigError:
@@ -28,7 +32,7 @@ def retrieve_default_location():
 
 def retrieve_data(location):
     try:
-        data = parser.read("config.ini")
+        data = parser.read("{}/config.ini".format(ROOT_DIR))
         if not data:
             raise NoConfigError
     except NoConfigError:
@@ -42,5 +46,9 @@ def retrieve_data(location):
                 "http://api.openweathermap.org/data/2.5/weather?q={}&appid={}".format(location, api_key)) as url:
             data = json.load(url)
             return data
-    except error.URLError as httpError:
-        print(httpError.reason)
+    except error.HTTPError as httpError:
+        print(
+            "{}An error occurred; a {}{} response code{}{} was given. Please try again.{}".format(Color.RED, Color.BOLD,
+                                                                                                  httpError.code,
+                                                                                                  Color.END, Color.RED,
+                                                                                                  Color.END))

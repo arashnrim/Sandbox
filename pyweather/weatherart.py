@@ -60,7 +60,7 @@ def rain():
 
 def thunderstorm():
     print("""{bold}
-                  .-~~~-.
+              .-~~~-.
       .- ~ ~-(       )_ _
      /                     ~ -.
      \\                         .'
