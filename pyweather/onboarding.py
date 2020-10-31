@@ -13,7 +13,7 @@ def welcome():
         "Welcome to pyweather, a command-line weather tool to get information about the weather right from your "
         "terminal.",
         end="\n\n")
-    sleep(2)
+    sleep(1)
     while True:
         print(
             "Would you like to save pyweather to your rc file? This allows you to run 'weather' at any time in your "
@@ -27,7 +27,7 @@ def welcome():
             break
         else:
             print("Invalid. Save pyweather to rc file?", end=" ")
-    sleep(2)
+    sleep(1)
     while True:
         print("Would you like to set a default location? pyweather will always try this location first.", end=" ")
         default = input("(y/n): ")
@@ -38,9 +38,17 @@ def welcome():
             break
         else:
             print("Invalid. Set a default location?", end=" ")
-    sleep(2)
+    sleep(1)
+    while True:
+        api_key = input("Enter your OpenWeatherMap API key now: ")
+        if len(api_key) == 32:
+            save_api_key(api_key)
+            break
+        else:
+            print("Invalid.", end=" ")
+    sleep(1)
     print()
-    print("That's it. Thanks for setting up!")
+    print("That's it. Thanks for setting up!", end="\n\n")
 
 
 """
@@ -91,7 +99,20 @@ def save_default():
     parser = configparser.ConfigParser()
 
     location = input("Enter the location name: ")
-    parser.add_section("Config")
-    parser.set("Config", "DefaultLocation", location)
+    parser.set("", "defaultlocation", location)
+    parser.write(config)
+    config.close()
+
+
+"""
+Saves the user's API key into the config.ini file.
+"""
+
+
+def save_api_key(api_key):
+    config = open("config.ini", "a")
+    parser = configparser.ConfigParser()
+
+    parser.set("", "apikey", api_key)
     parser.write(config)
     config.close()

@@ -18,7 +18,7 @@ def retrieve_default_location():
     except NoConfigError:
         sys.exit("No config file found or there was an invalid file. Ending execution.")
     else:
-        default_location = parser["Config"]["defaultLocation"]
+        default_location = parser["DEFAULT"]["defaultlocation"]
 
     if default_location:
         return default_location
@@ -34,7 +34,7 @@ def retrieve_data(location):
     except NoConfigError:
         sys.exit("No config file found or there was an invalid file. Ending execution.")
     else:
-        api_key = parser["Config"]["apiKey"]
+        api_key = parser["DEFAULT"]["apikey"]
 
     try:
         # noinspection SpellCheckingInspection
