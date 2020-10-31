@@ -6,6 +6,7 @@ from art import tprint
 from decoder import retrieve_data, retrieve_default_location
 from onboarding import welcome
 from styling import Color
+import weatherart
 
 # Tries to read if the user has set up the program before.
 # Otherwise, the user is directed to onboarding.
@@ -45,6 +46,22 @@ while repeat == "y" or repeat == "Y":
     feels_like = round(data["main"]["feels_like"] / 10, 2)
     wind_direction = data["wind"]["deg"]
     wind_speed = data["wind"]["speed"]
+    if condition == "Clear sky":
+        weatherart.clear_sky()
+    elif condition == "Few clouds":
+        weatherart.few_clouds()
+    elif condition == "Scattered clouds":
+        weatherart.scattered_clouds()
+    elif condition == "Broken clouds":
+        weatherart.broken_clouds()
+    elif condition == "Shower rain" or condition == "Rain":
+        weatherart.rain()
+    elif condition == "Thunderstorm":
+        weatherart.thunderstorm()
+    elif condition == "Snow":
+        weatherart.snow()
+    elif condition == "Mist":
+        weatherart.mist()
     print("{}Current condition:{} {}".format(Color.YELLOW, Color.END, condition))
     print("{}Temperature:{} {}°C".format(Color.YELLOW, Color.END, temp))
     print("{}Feels like:{} {}°C".format(Color.YELLOW, Color.END, temp))
