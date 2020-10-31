@@ -13,7 +13,7 @@ import weatherart
 try:
     parser = configparser.ConfigParser()
     parser.read("config.ini")
-    parser["DEFAULT"]["apikey"]
+    api_key = parser["DEFAULT"]["apikey"]
 except (OSError, KeyError):
     configured = False
 else:
@@ -40,7 +40,9 @@ while repeat == "y" or repeat == "Y":
         data = retrieve_data(location)
         print()
 
+    # noinspection PyUnboundLocalVariable,PyUnboundLocalVariable
     print("=== {}Weather for {}{} ===".format(Color.BOLD, default_location if use_default_location else location, Color.END))
+    # noinspection PyUnboundLocalVariable
     condition = data["weather"][0]["description"].capitalize()
     temp = round(data["main"]["temp"] / 10, 2)
     feels_like = round(data["main"]["feels_like"] / 10, 2)
@@ -81,6 +83,7 @@ while repeat == "y" or repeat == "Y":
         wind_direction_arrow = "↓"
     elif 270 < wind_direction < 360:
         wind_direction_arrow = "↘"
+    # noinspection PyUnboundLocalVariable
     print("{}Wind:{} {} {}m/s".format(Color.YELLOW, Color.END, wind_direction_arrow, wind_speed))
 
     sleep(4)

@@ -93,13 +93,3 @@ def mist():
       ~~~~~~~
         ~~~~~~~~~~~~~
     {end}""".format(bold=Color.BOLD, end=Color.END))
-
-
-clear_sky()
-few_clouds()
-scattered_clouds()
-broken_clouds()
-rain()
-thunderstorm()
-snow()
-mist()
