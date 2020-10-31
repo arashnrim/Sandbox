@@ -1,13 +1,13 @@
-from time import sleep
 import configparser
 import os
+from time import sleep
 
 from art import tprint
 
+import weatherart
 from decoder import retrieve_data, retrieve_default_location
 from onboarding import welcome
 from styling import Color
-import weatherart
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -47,6 +47,7 @@ while repeat == "y" or repeat == "Y":
         # noinspection PyUnboundLocalVariable,PyUnboundLocalVariable
         print("=== {}Weather for {}{} ===".format(Color.BOLD, default_location if use_default_location else location,
                                                   Color.END))
+        # noinspection PyUnboundLocalVariable
         temp = round(data["main"]["temp"] / 10, 2)
         condition = data["weather"][0]["description"].capitalize()
         feels_like = round(data["main"]["feels_like"] / 10, 2)

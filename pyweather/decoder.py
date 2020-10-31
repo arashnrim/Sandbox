@@ -1,8 +1,8 @@
 import configparser
 import json
+import os
 import sys
 from urllib import request, error
-import os
 
 from styling import Color
 
@@ -47,4 +47,8 @@ def retrieve_data(location):
             data = json.load(url)
             return data
     except error.HTTPError as httpError:
-        print("{}An error occurred; a {}{} response code{}{} was given. Please try again.{}".format(Color.RED, Color.BOLD, httpError.code, Color.END, Color.RED, Color.END))
+        print(
+            "{}An error occurred; a {}{} response code{}{} was given. Please try again.{}".format(Color.RED, Color.BOLD,
+                                                                                                  httpError.code,
+                                                                                                  Color.END, Color.RED,
+                                                                                                  Color.END))
