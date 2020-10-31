@@ -3,6 +3,8 @@ import os
 from pathlib import Path
 from time import sleep
 
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 """
 Welcomes the user to the project and guides them through on-boarding.
 """
@@ -68,8 +70,7 @@ def save_in_path():
 
     try:
         rc = open(profile, "a")
-        root_dir = os.path.dirname(os.path.abspath(__file__))
-        rc.write("\nalias weather=\"python3 {}\"".format(root_dir))
+        rc.write("\nalias weather=\"python3 {}\"".format(ROOT_DIR))
         rc.close()
     except OSError:
         return False
@@ -95,7 +96,7 @@ Saves a default location for pyweather to run on every occurrence.
 
 
 def save_default():
-    config = open("config.ini", "a")
+    config = open("{}/config.ini".format(ROOT_DIR), "a")
     parser = configparser.ConfigParser()
 
     location = input("Enter the location name: ")
@@ -110,7 +111,7 @@ Saves the user's API key into the config.ini file.
 
 
 def save_api_key(api_key):
-    config = open("config.ini", "a")
+    config = open("{}/config.ini".format(ROOT_DIR), "a")
     parser = configparser.ConfigParser()
 
     parser.set("", "apikey", api_key)
