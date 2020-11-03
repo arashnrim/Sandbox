@@ -1,19 +1,20 @@
+import argparse
 import configparser
 import os
-import argparse
 from time import sleep
 
 from art import tprint
 
-from request import retrieve_data, retrieve_default_location
 from onboarding import welcome
-from styling import Color
 from parse import parse
+from request import retrieve_data, retrieve_default_location
+from styling import Style
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 AP_PARSER = argparse.ArgumentParser()
-AP_PARSER.add_argument("--l", "--location", help="get weather information for a custom location", dest="location")
-AP_PARSER.add_argument("--nr", "--norepeat", help="do not prompt for re-entry", action="store_true", dest="norepeat")
+AP_PARSER.add_argument("-l", "--location", help="get weather information for a custom location", dest="location")
+AP_PARSER.add_argument("-nr", "--norepeat", help="do not prompt for re-entry", action="store_true", dest="norepeat")
+AP_PARSER.add_argument("-nh", "--noheader", help="do not show pyweather header", action="store_true", dest="noheader")
 AP_ARGS = AP_PARSER.parse_args()
 
 # Tries to read if the user has set up the program before.
@@ -27,9 +28,10 @@ except (OSError, KeyError):
 else:
     configured = True
 
-print("{}==========================".format(Color.BOLD))
-tprint("pyweather")
-print("=========================={}".format(Color.END), end="\n\n")
+if not AP_ARGS.noheader:
+    print("{}==========================".format(Style.BOLD))
+    tprint("pyweather")
+    print("=========================={}".format(Style.END), end="\n\n")
 
 if not configured:
     sleep(2)
@@ -55,13 +57,13 @@ while repeat == "y" or repeat == "Y":
 
         # noinspection PyUnboundLocalVariable,PyUnboundLocalVariable
         if not AP_ARGS.location:
-            print("=== {}Weather for {}, {}{} ===".format(Color.BOLD,
+            print("=== {}Weather for {}, {}{} ===".format(Style.BOLD,
                                                           default_location if use_default_location else location,
-                                                          country_code, Color.END))
+                                                          country_code, Style.END))
         else:
-            print("=== {}Weather for {}, {}{} ===".format(Color.BOLD,
+            print("=== {}Weather for {}, {}{} ===".format(Style.BOLD,
                                                           AP_ARGS.location,
-                                                          country_code, Color.END))
+                                                          country_code, Style.END))
         parse(data)
 
     if AP_ARGS.norepeat:

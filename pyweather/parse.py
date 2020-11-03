@@ -1,5 +1,5 @@
 import weatherart
-from styling import Color
+from styling import Style
 
 
 def parse(data):
@@ -24,9 +24,9 @@ def parse(data):
         weatherart.snow()
     elif condition == "Mist":
         weatherart.mist()
-    print("{}Current condition:{} {}".format(Color.YELLOW, Color.END, condition))
-    print("{}Temperature:{} {}°C".format(Color.YELLOW, Color.END, temp))
-    print("{}Feels like:{} {}°C".format(Color.YELLOW, Color.END, feels_like))
+    print("{}Current condition:{} {}".format(Style.YELLOW, Style.END, condition))
+    print("{}Temperature:{} {}°C".format(Style.YELLOW, Style.END, temp))
+    print("{}Feels like:{} {}°C".format(Style.YELLOW, Style.END, feels_like))
     if wind_direction == 0:
         wind_direction_arrow = "→"
     elif 0 < wind_direction < 90:
@@ -44,4 +44,4 @@ def parse(data):
     elif 270 < wind_direction < 360:
         wind_direction_arrow = "↘"
     # noinspection PyUnboundLocalVariable
-    print("{}Wind:{} {} {}m/s".format(Color.YELLOW, Color.END, wind_direction_arrow, wind_speed))
+    print("{}Wind:{} {} {}m/s".format(Style.YELLOW, Style.END, wind_direction_arrow, wind_speed))

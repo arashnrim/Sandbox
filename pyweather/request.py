@@ -4,7 +4,7 @@ import os
 import sys
 from urllib import request, error
 
-from styling import Color
+from styling import Style
 
 parser = configparser.ConfigParser()
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -48,7 +48,7 @@ def retrieve_data(location):
             return data
     except error.HTTPError as httpError:
         print(
-            "{}An error occurred; a {}{} response code{}{} was given. Please try again.{}".format(Color.RED, Color.BOLD,
+            "{}An error occurred; a {}{} response code{}{} was given. Please try again.{}".format(Style.RED, Style.BOLD,
                                                                                                   httpError.code,
-                                                                                                  Color.END, Color.RED,
-                                                                                                  Color.END))
+                                                                                                  Style.END, Style.RED,
+                                                                                                  Style.END))

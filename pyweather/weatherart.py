@@ -1,4 +1,4 @@
-from styling import Color
+from styling import Style
 
 
 def clear_sky():
@@ -10,7 +10,7 @@ def clear_sky():
          \\         /
         ,'`._   _.'`.
        '   / `!` \\   `
-    {end}""".format(bold=Color.BOLD, yellow=Color.YELLOW, end=Color.END))
+    {end}""".format(bold=Style.BOLD, yellow=Style.YELLOW, end=Style.END))
 
 
 def few_clouds():
@@ -21,7 +21,7 @@ def few_clouds():
      /                     ~ -. {yellow}|{end}{bold}
     |                           \\ {yellow} ~ {end}{bold}
         ~- . _____________ . -~
-    {end}""".format(bold=Color.BOLD, end=Color.END, yellow=Color.YELLOW))
+    {end}""".format(bold=Style.BOLD, end=Style.END, yellow=Style.YELLOW))
 
 
 def scattered_clouds():
@@ -32,7 +32,7 @@ def scattered_clouds():
     |                           \\
      \\                         .'
        ~- . _____________ . -~
-    {end}""".format(bold=Color.BOLD, end=Color.END))
+    {end}""".format(bold=Style.BOLD, end=Style.END))
 
 
 def broken_clouds():
@@ -43,7 +43,7 @@ def broken_clouds():
     |                           \\{end}          \\{bold}
      \\                         .'{end}          .'{bold}
        ~- . _____________ . -~{end}  ______ . -~{bold}  
-    {end}""".format(bold=Color.BOLD, end=Color.END))
+    {end}""".format(bold=Style.BOLD, end=Style.END))
 
 
 def rain():
@@ -55,7 +55,7 @@ def rain():
        ~- . _____________ . -~
        {blue}’   ’   ’   ’   ’   ’
       ’   ’   ’   ’   ’   ’
-    {end}""".format(bold=Color.BOLD, blue=Color.BLUE, end=Color.END))
+    {end}""".format(bold=Style.BOLD, blue=Style.BLUE, end=Style.END))
 
 
 def thunderstorm():
@@ -69,20 +69,20 @@ def thunderstorm():
        ’{end}{bold}    {yellow}\\   \\{end}{bold}   {blue}’   ’
       ’{end}{bold}     {yellow}/  /{end}{bold}   {blue}’   ’{end}{bold}
             {yellow}\\ \\{end}
-    """.format(bold=Color.BOLD, blue=Color.BLUE, yellow=Color.YELLOW, end=Color.END))
+    """.format(bold=Style.BOLD, blue=Style.BLUE, yellow=Style.YELLOW, end=Style.END))
 
 
 def snow():
     print("""{bold}
        .      .
-       _\/  \/_
-        _\/\/_
-    _\_\_\/\/_/_/_
-     / /_/\/\_\ \\
-        _/\/\_
-        /\  /\\
+       _\\/  \\/_
+        _\\/\\/_
+    _\\_\\_\\/\\/_/_/_
+     / /_/\\/\\_\\ \\
+        _/\\/\\_
+        /\\  /\\
        '      '
-    {end}""".format(bold=Color.BOLD, end=Color.END))
+    {end}""".format(bold=Style.BOLD, end=Style.END))
 
 
 def mist():
@@ -92,4 +92,4 @@ def mist():
            ~~~~~~~
       ~~~~~~~
         ~~~~~~~~~~~~~
-    {end}""".format(bold=Color.BOLD, end=Color.END))
+    {end}""".format(bold=Style.BOLD, end=Style.END))
