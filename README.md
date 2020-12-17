@@ -8,9 +8,9 @@
 - [Learning log](#learning-log)
 
 ## Introduction
-Welcome to pyscraper! This is meant to be an experimental and learning project for me. This project was created specially for a practice assignment at [DevProjects](https://www.codementor.io/projects/web-scraper-to-get-news-article-content-atx32d46qe).
+Welcome to pyscraper! This is meant to be an experimental and learning project for me, and part of the [Sandbox](https://github.com/arashnrim/sandbox). The main reason why this is separated is due to the DevProjects assignment requirements.
 
-This project took approximately two hours to make. 
+This project was created specially for a practice assignment at [DevProjects](https://www.codementor.io/projects/web-scraper-to-get-news-article-content-atx32d46qe). This project took approximately two hours to make. 
 
 Here are my main takeaways from this project:
 - **Web scraping** — through this project, I learnt how to use the [Requests](https://requests.readthedocs.io/en/master/) and [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/) modules to scrape text off news articles.
