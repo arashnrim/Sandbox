@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from format import formats
+from export import export
 
 try:
     LINK = sys.argv[1]
@@ -24,22 +25,39 @@ for link in formats:
         date_class = formats[link]["date_class"]
 
         # Gets the headline of the article.
-        headline = BeautifulSoup(TEXT, features="html.parser").find_all("h1", {"class": headline_class})[0].get_text()
-        print("\033[1m{}\033[0m".format(headline))
+        HEADLINE = BeautifulSoup(TEXT, features="html.parser").find_all("h1", {"class": headline_class})[0].get_text()
+        print("\033[1m{}\033[0m".format(HEADLINE))
 
         # Gets the author of the article.
-        author = BeautifulSoup(TEXT, features="html.parser").find_all(author_element, {"class": author_class})[
+        AUTHOR = BeautifulSoup(TEXT, features="html.parser").find_all(author_element, {"class": author_class})[
             0].get_text()
-        print(author)
+        print(AUTHOR)
 
         # Gets the date of the article.
         if date_element and date_class:
-            date = BeautifulSoup(TEXT, features="html.parser").find_all(date_element, {"class": date_class})[
+            DATE = BeautifulSoup(TEXT, features="html.parser").find_all(date_element, {"class": date_class})[
                 0].get_text()
-            print(date)
+            print(DATE)
 
 print()
 
 # Gets the main content of the article.
+BODY = []
 for element in BeautifulSoup(TEXT, features="html.parser").find_all(BODY_ELEMENT, {"class": BODY_CLASS}):
     print(element.get_text())
+    BODY.append(element.get_text())
+
+# Exports the article into a file.
+try:
+    export({
+        "headline": HEADLINE,
+        "author": AUTHOR,
+        "date": DATE,
+        "body": BODY
+    })
+except NameError:
+    export({
+        "headline": HEADLINE,
+        "author": AUTHOR,
+        "body": BODY
+    })
