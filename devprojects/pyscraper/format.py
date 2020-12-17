@@ -18,7 +18,7 @@ formats = {
         "date_element": "",
         "date_class": "",
 
-        "body_element": "span",
+        "body_element": "div",
         "body_class": "Paragraph__component"
     },
     "washingtonpost.com": {
