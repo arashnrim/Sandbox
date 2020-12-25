@@ -13,7 +13,7 @@ Welcome to pyweather! This is meant to be an experimental and learning project f
 Here are my main takeaways from this project:
 
 - **Interacting with APIs** — through this project, I managed to learn more about how to interact with different APIs. I learned that most return in the form of JSON, and I needed to use Python's `json` to read requests.
-- **Using `urllib`** — through this project, I learned to use the `urllub` library to handle requests. I learned more about different response codes, including 200 (OK), 404 (Not Found), and 429 (Too Many Requests).
+- **Using `urllib`** — through this project, I learned to use the `urllib` library to handle requests. I learned more about different response codes, including 200 (OK), 404 (Not Found), and 429 (Too Many Requests).
 - **Handling local directories** — through this project, I learned how to handle navigating through local directories. In most cases, I found `os` and/or `sys` to be really helpful on this end.
 - **Reading from `.ini` files** — through this project, I learned how to read and write to `.ini` files with the help of the `configparser` module.
 
