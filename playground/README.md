@@ -8,8 +8,8 @@ This folder is highly experimental, so you may not see any real-world applicatio
 
 So far, the languages that I have started playing around with are:
 
-- [C++](https://github.com/arashnrim/Sandbox/tree/playground/cpp)
-- [Rust](https://github.com/arashnrim/Sandbox/tree/playground/rust)
+- [C++](https://github.com/arashnrim/Sandbox/tree/main/playground/cpp)
+- [Rust](https://github.com/arashnrim/Sandbox/tree/main/playground/rust)
 
 ## Contributions and Acknowledgements
 As mentioned in the Introduction, this is highly experimental and so I wouldn't expect much contributions. However, if you'd like to leave a tip, point out some errors, or whatever else that may help, feel free to create an Issue!
