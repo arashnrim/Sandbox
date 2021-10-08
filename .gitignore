@@ -1,2 +1,8 @@
+// macOS files
 .DS_Store
+
+// JetBrains IDE files
 .idea
+
+// Compiled binaries (for the Playground)
+*.out
